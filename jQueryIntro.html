@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Intro</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+	body {
+		overflow: scroll;
+	}
+	#pink{
+		border: 1px solid white;
+		background-color: pink;
+		height: 300px;
+		width: 300px;
+		padding: none;
+		margin: none;
+		color: white;
+
+	}
+	#blue{
+		border: 1px solid white;
+		background-color: blue;
+		height: 300px;
+		width: 300px;
+		padding: none;
+		margin: none;
+		color: white;
+	}
+	#black{
+		border: 1px solid white;
+		background-color: black;
+		height: 300px;
+		width: 300px;
+		padding: none;
+		margin: none;
+		color: white;
+	}
+	#panel {
+		padding: 300px;
+		display: none;
+		border: 1px solid white;
+		background-color: black;
+		height: 300px;
+		width: 300px;
+		margin: none;
+		color: white;
+
+	}
+
+	#green{
+		border: 1px solid white;
+		background-color: green;
+		height: 300px;
+		width: 300px;
+		padding: none;
+		margin: none;
+		color: white;
+	}
+	.row {
+		margin: 0 auto;
+		margin-left: 500px;
+	}
+	.row1 {
+		margin: 0 auto;
+		margin-left: 500px;
+	}
+
+
+
+
+	</style>
+</head>
+<body>
+
+	<h1 class="my-title">Hello world</h1>
+	<ul>
+		<li>1</li>
+		<li id="two">2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+
+	<p></p>
+
+	<button class="click">Click</button>
+
+	<div class="row">
+	  <div id="pink"class="col-sm-4">pink</div>
+	  <div id="blue"class="col-sm-4">blue</div>
+	</div>
+	<div class="row1">
+	  <div id="black"class="col-sm-4">black</div>
+	  <div id="panel"></div>
+	  <div id="green"class="col-sm-4">green</div>
+	</div>
+<!-- script always above the closing body tag -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<script>
+		//This saying that once the document is ready....
+		// go do line 16
+		// $(document).ready(function(){
+			// $('li, p').hide(5000);
+			//here we have x3 assigned html items with jquery
+			//these 3 itmes are in the DOM above
+			//We then use vanilla javascript to assign the items via jQuery
+			//To a normal javascript variable - 'grabStuff' 
+			// var grabStuff = $("li, p");
+			// console.log(grabStuff);
+			//we use the hide method and then use a call back function
+			// $("#two").hide(4000, function(){
+			// 	$("#two").show();
+			// });
+  	// 	})
+			//this is a jqeury pattern
+			// $("#two").hide (1000).show(1000).hide(1000).show(1000).fadein(10000).fadeout(10000);
+
+			//events and jquery
+		$(document).ready(function(){
+			// $( "button" ).click(function(){
+			//This will sonsole log for debugging purposes 
+			//after the hover even fires
+				// console.log("a");
+			//do stuff here
+				// $("div").hide (5000,function(){
+					//here we console log
+				// 	console.log("b");
+				// })//this is a function within a function - that is why there is this curly and smooth bracket - this is the button for div hide function.
+				$("#pink").click(function(){
+					$("#pink").toggle();
+					// .fadeIn(10000)
+					// .fadeOut(10000);
+				});//this is the bracket for button click function
+				$("#blue").hover(function(){
+					$("#blue").fadeOut(5000);
+				});
+				$("#green").dblclick(function(){
+					$("#blue").fadeIn(5000);
+				});
+				$("#black").click(function(){
+   	 				$("#panel").slideDown();
+   	 				$("#panel").click(function(){
+   	 				$("#panel").fadeOut();
+   	 			});
+
+				});
+
+		});//this is the bracket for doc ready function
+  		
+
+
+			// $("button").click(function() {
+  	// 		$(".my-title").toggle();
+			//Ised h1 is a selector
+			// $('.my-title').hide();
+
+
+		</script>
+</body>
+</html>
