@@ -75,7 +75,8 @@
 <body>
 
 	<h1 class="my-title">Hello world</h1>
-	<ul>
+	<p>This page contains basic jQuery methods, using bootstrap grids</p>
+<!-- 	<ul>
 		<li>1</li>
 		<li id="two">2</li>
 		<li>3</li>
@@ -85,7 +86,7 @@
 
 	<p></p>
 
-	<button class="click">Click</button>
+	<button class="click">Click</button> -->
 
 	<div class="row">
 	  <div id="pink"class="col-sm-4">pink</div>
@@ -129,15 +130,20 @@
 				// 	console.log("b");
 				// })//this is a function within a function - that is why there is this curly and smooth bracket - this is the button for div hide function.
 				$("#pink").click(function(){
-					$("#pink").toggle();
+					$("#pink").toggle()
+					.fadeIn(1000)
+					.fadeOut(1000)
+					.fadeIn(1000);
 					// .fadeIn(10000)
 					// .fadeOut(10000);
 				});//this is the bracket for button click function
 				$("#blue").hover(function(){
-					$("#blue").fadeOut(5000);
+					$("#blue, #green").fadeOut(1000, function(){
+					$("#blue, #green").fadeIn(1000);
+				});
 				});
 				$("#green").dblclick(function(){
-					$("#blue").fadeIn(5000);
+					$(this).css("background-color", "yellow");
 				});
 				$("#black").click(function(){
    	 				$("#panel").slideDown();
